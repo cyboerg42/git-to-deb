@@ -6,6 +6,7 @@ KERNEL_FOLDER_GIT="linux-git"
 CORES="2"
 
 
+echo "Clone branch from kernel.org..."
 git clone -b $GIT_BRANCH git://git.kernel.org/pub/scm/linux/kernel/git/stable/stable.git $KERNEL_FOLDER
 echo "Enter kernel source folder..."
 cd $KERNEL_FOLDER
