@@ -1,16 +1,14 @@
 #!/bin/bash
 
 VERSION="1.0.X200"
-GIT_BRANCH="master" # See more here -> http://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/
-KERNEL_FOLDER_GIT="linux-git"
 CORES="2"
 
 
 echo "Clone branch..."
 mkdir $KERNEL_FOLDER
-git clone -b $GIT_BRANCH git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/ $KERNEL_FOLDER
+git clone -b master git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/
 echo "Enter kernel source folder..."
-cd $KERNEL_FOLDER
+cd linux-stable
 echo "Copy current kernel config..."
 sudo cp /boot/config-$(uname -r) .config
 echo "Make Menuconfig..."
