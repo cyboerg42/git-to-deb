@@ -5,7 +5,6 @@ CORES="4"
 
 
 echo "Clone branch..."
-mkdir $KERNEL_FOLDER
 git clone -b master git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/
 echo "Enter kernel source folder..."
 cd linux-stable
