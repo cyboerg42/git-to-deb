@@ -1,7 +1,7 @@
 #!/bin/bash
 
-VERSION="1.0.X200"
-CORES="2"
+VERSION="1.0.HP630G3"
+CORES="4"
 
 
 echo "Clone branch..."
@@ -11,6 +11,9 @@ echo "Enter kernel source folder..."
 cd linux-stable
 echo "Copy current kernel config..."
 sudo cp /boot/config-$(uname -r) .config
+echo "Get current gcc patch..."
+cp ../enable_additional_cpu_optimizations_for_gcc_v4.9+_kernel_v4.13+.patch .
+patch -p1 < enable_additional_cpu_optimizations_for_gcc_v4.9+_kernel_v4.13+.patch
 echo "Make Menuconfig..."
 make menuconfig
 echo "Cleaning source folder..."
