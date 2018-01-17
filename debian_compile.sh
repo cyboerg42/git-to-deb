@@ -18,5 +18,5 @@ make menuconfig
 echo "Cleaning source folder..."
 make-kpkg clean
 echo "Building kernel..."
-fakeroot make-kpkg --initrd --revision=$VERSION kernel_image kernel_headers -j $CORES
+KCFLAGS="-O3" fakeroot make-kpkg --initrd --revision=$VERSION kernel_image kernel_headers -j $CORES
 echo "Done."
