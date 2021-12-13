@@ -1,4 +1,5 @@
 # git-to-deb
-kernel.org kernel source from git to debian package
 
-First run "install_dependencies.sh", next you edit debian_compile.sh for your needs - than run it.
+build script for building the latest kernel upstream source from kernel.org to a debian/ubuntu package.
+
+first you'll need to run ```./install_dependencies.sh``` after that you can run ```./debian_compile.sh``` to build the latest upstream kernel.
