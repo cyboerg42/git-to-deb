@@ -2,8 +2,17 @@
 
 VERSION="1.0.CLANG"
 
-echo "Clone branch..."
-git clone -b master git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/
+DIR="linux-stable"
+if [ -d "$DIR" ]; then
+  echo "Updateing branch..."
+  cd $DIR
+  git reset --hard
+  make clean
+  git pull
+else
+  echo "Clone branch..."
+  git clone -b master git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/
+fi
 
 echo "Enter kernel source folder..."
 cd linux-stable
